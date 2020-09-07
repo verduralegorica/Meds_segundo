@@ -1,0 +1,34 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block app_styles %}
+<style>
+    .otree-form-errors {
+        display: none;
+    }
+</style>
+{% endblock %}
+
+{% block title %}PARTE II. Cuestionario principal: elección {% endblock %}
+
+{% block content %}
+<font color="burlywood"><h4 align="right">Tu ID: {{ participant_id }}</h4></font>
+<br>
+<p> En la siguiente imagen podrás observar las opciones con las que cuentas, luego
+    debes responder las preguntas de esta sección. </p>
+<br>
+
+        <img src="{% static 'E04.png' %}" width="950px"/>
+
+        {% formfields %}
+
+{% next_button %}
+
+    {% include Constants.instructions_button %}
+<br>
+<br>
+    <p>
+    {% include Constants.contact_template %}
+    </p>
+
+{% endblock %}
