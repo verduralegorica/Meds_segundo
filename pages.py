@@ -19,7 +19,7 @@ class Eleccion1(Page):
         return dict(participant_id=self.participant.label)
 
     def is_displayed(self):
-        if self.participant.vars['is_mobile'] is False:
+        if self.participant.vars['MobilePhones'] is False:
             return True
         else:
             return False
@@ -33,7 +33,7 @@ class Eleccion2(Page):
         return dict(participant_id=self.participant.label)
 
     def is_displayed(self):
-        if self.participant.vars['is_mobile'] is False:
+        if self.participant.vars['MobilePhones'] is False:
             return True
         else:
             return False
@@ -47,7 +47,7 @@ class Eleccion3(Page):
         return dict(participant_id=self.participant.label)
 
     def is_displayed(self):
-        if self.participant.vars['is_mobile'] is False:
+        if self.participant.vars['MobilePhones'] is False:
             return True
         else:
             return False
@@ -61,7 +61,7 @@ class Eleccion4(Page):
         return dict(participant_id=self.participant.label)
 
     def is_displayed(self):
-        if self.participant.vars['is_mobile'] is False:
+        if self.participant.vars['MobilePhones'] is False:
             return True
         else:
             return False
