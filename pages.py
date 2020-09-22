@@ -13,7 +13,7 @@ class Eleccion0(Page):
 class Eleccion1(Page):
 
     form_model = 'player'
-    form_fields = ['p1']
+    form_fields = ['e1', 'e1x', 'e1y']
 
     def vars_for_template(self):
         return dict(participant_id=self.participant.label)
@@ -27,7 +27,7 @@ class Eleccion1(Page):
 class Eleccion2(Page):
 
     form_model = 'player'
-    form_fields = ['p2']
+    form_fields = ['e21', 'e21x', 'e22']
 
     def vars_for_template(self):
         return dict(participant_id=self.participant.label)
@@ -41,7 +41,7 @@ class Eleccion2(Page):
 class Eleccion3(Page):
 
     form_model = 'player'
-    form_fields = ['p31', 'p32']
+    form_fields = ['e3', 'e3x', 'e3y']
 
     def vars_for_template(self):
         return dict(participant_id=self.participant.label)
@@ -55,7 +55,35 @@ class Eleccion3(Page):
 class Eleccion4(Page):
 
     form_model = 'player'
-    form_fields = ['p41', 'p42']
+    form_fields = ['e41', 'e41x', 'e42']
+
+    def vars_for_template(self):
+        return dict(participant_id=self.participant.label)
+
+    def is_displayed(self):
+        if self.participant.vars['MobilePhones'] is False:
+            return True
+        else:
+            return False
+
+class Eleccion5(Page):
+
+    form_model = 'player'
+    form_fields = ['e5', 'e5x', 'e5y']
+
+    def vars_for_template(self):
+        return dict(participant_id=self.participant.label)
+
+    def is_displayed(self):
+        if self.participant.vars['MobilePhones'] is False:
+            return True
+        else:
+            return False
+
+class Eleccion6(Page):
+
+    form_model = 'player'
+    form_fields = ['e61', 'e61x', 'e62']
 
     def vars_for_template(self):
         return dict(participant_id=self.participant.label)
@@ -72,7 +100,9 @@ initial_page_sequence = [
     Eleccion1,
     Eleccion2,
     Eleccion3,
-    Eleccion4
+    Eleccion4,
+    Eleccion5,
+    Eleccion6
 ]
 
 page_sequence = [
